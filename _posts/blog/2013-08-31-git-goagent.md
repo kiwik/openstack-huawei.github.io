@@ -7,9 +7,10 @@ description: 在大陆活着是那么的艰难……
 
 Author：[孔令贤](http://weibo.com/u/1847576883)
 
+预置环境：  
 - 操作系统：Win7
 
-
+步骤：  
 1. 到goagent的主页可以找到下载和配置goagent的教程  
 2. 修改git https协议的代理为goagent:  
 进入主目录：C:\Users\用户名\  
