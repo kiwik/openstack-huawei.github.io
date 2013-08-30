@@ -44,3 +44,14 @@ slave主机加入资源池后，在每个主机上的nova-compute虚拟机会被
     xe pool-join master-address=<host1> master-username=<administrators_username> master-password=<password>
 
 资源池创建成功后，就可以根据aggregate_metadata创建flavor，使用flavor创建的虚拟机就可以运行在XenServer资源池内的主机上，同时支持手动迁移和热迁移等高级特性。
+
+### XenAPIDriver的初始化
+
+所有xenserver主机加入资源池后，XenAPIDriver的初始化操作如下：
+
+- 首先，初始化一个XenAPISession对象。在该对象中保存了调用XenAPI的调用接口、连接master主机的session、xenserver主机的标识
+- 初始化VolumeOps。包含卷相关的操作。
+- 初始化VMOps。包含了虚拟机相关的操作。
+- 一个ResourcePool对象。该对象中包含了xenserver主机的名称，地址，标识以及调用nova-compute的RPC代理。
+
+注意：第一步中的session就是后续所有操作的基础。即虚拟机和卷相关的操作都会发送到master节点，在资源池范围内进行处理。
