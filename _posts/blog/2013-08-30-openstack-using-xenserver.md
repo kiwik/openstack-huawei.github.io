@@ -7,7 +7,7 @@ description: 在OpenStack中使用XenServer资源池浅析
 
 OpenStack中的Xen driver类：nova/virt/xenapi/driver.py中的XenAPIDriver类，该类继承的ComputeDriver是所有driver的基类，是所有虚拟机相关功能集合，而XenAPIDriver实现的方法是ComputeDriver类中方法的子集。
 
-### 创建资源池并添加主机
+## 创建资源池并添加主机
 
 使用xenserver资源池（支持虚拟机热迁移）前提：  
 1. 有符合创建资源池的xenserver主机，已部署openstack（nova-compute）  
@@ -45,7 +45,7 @@ slave主机加入资源池后，在每个主机上的nova-compute虚拟机会被
 
 资源池创建成功后，就可以根据aggregate_metadata创建flavor，使用flavor创建的虚拟机就可以运行在XenServer资源池内的主机上，同时支持手动迁移和热迁移等高级特性。
 
-### XenAPIDriver的初始化
+## XenAPIDriver的初始化
 
 所有xenserver主机加入资源池后，XenAPIDriver的初始化操作如下：
 
