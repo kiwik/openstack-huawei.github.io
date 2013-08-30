@@ -27,3 +27,9 @@ OpenStack中的Xen driver类：nova/virt/xenapi/driver.py中的XenAPIDriver类�
     nova aggregate-set-metadata <aggregate-id> operational_state=created
     
 上述操作只是操作数据表。  
+5. 将master节点加入aggregate
+
+    nova aggregate-add-host <aggregate-id> <name-of-master-compute>
+    
+向主机组添加主机的流程如下：  
+![流程图](/images/blog/openstack-using-xenserver/1.png)  
