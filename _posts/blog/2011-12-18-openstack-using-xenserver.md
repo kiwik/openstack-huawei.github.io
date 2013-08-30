@@ -33,3 +33,14 @@ OpenStack中的Xen driver类：nova/virt/xenapi/driver.py中的XenAPIDriver类�
     
 向主机组添加主机的流程如下：  
 ![流程图](/images/blog/openstack-using-xenserver/1.png)  
+6. 加入其它slave节点
+
+    nova aggregate-add-host <aggregate-id> <compute-host-name>
+    
+slave主机加入资源池后，在每个主机上的nova-compute虚拟机会被关机，待xenserver主机完成加入池的操作后，再把nova-compute虚拟机启动。
+
+上述流程图中的最后一步理解的不是很清楚，不知道为何需要在master节点执行命令。XenServer官方文档中将一个主机加入资源池，是在预加入xenserver主机上执行（而不是在master节点执行）：
+
+    xe pool-join master-address=<host1> master-username=<administrators_username> master-password=<password>
+
+资源池创建成功后，就可以根据aggregate_metadata创建flavor，使用flavor创建的虚拟机就可以运行在XenServer资源池内的主机上，同时支持手动迁移和热迁移等高级特性。
