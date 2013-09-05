@@ -7,7 +7,7 @@ description: 本篇文章是对老外一个系列博客的翻译，讲述OpenSta
 
 原文标题：OPENSTACK COMPUTE FOR VSPHERE ADMINS  
 原文链接（一共五篇，这里列出第一篇）：http://cloudarchitectmusings.com/2013/06/24/openstack-for-vmware-admins-nova-compute-with-vsphere-part-1/  
-翻译者：[吴江](http://weibo.com/119329500?topnav=1&wvr=5&topsug=1)
+翻译者：华为云计算工程师 [吴江](http://weibo.com/119329500?topnav=1&wvr=5&topsug=1)  
 团队：Huawei OpenStack Team
 
 -------

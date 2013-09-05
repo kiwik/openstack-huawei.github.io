@@ -5,7 +5,8 @@ category: blog
 description: 在OpenStack中使用XenServer资源池浅析
 ---
 
-Author：[孔令贤](http://weibo.com/u/1847576883)
+Author：华为云计算工程师 [孔令贤](http://weibo.com/lingxiankong)  
+团队：Huawei OpenStack Team
 
 OpenStack中的Xen driver类：nova/virt/xenapi/driver.py中的XenAPIDriver类，该类继承的ComputeDriver是所有driver的基类，是所有虚拟机相关功能集合，而XenAPIDriver实现的方法是ComputeDriver类中方法的子集。
 
